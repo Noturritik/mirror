@@ -35,7 +35,7 @@ if len(DATABASE_URL) == 0:
     DATABASE_URL = None
 
 if DATABASE_URL is not None:
-    conn = MongoClient(DATABASE_URL)
+    conn = MongoClient(mongodb+srv://naresh:nareshc68f@cluster0.lomxfvs.mongodb.net/?retryWrites=true&w=majority)
     db = conn.mltb
     if config_dict := db.settings.config.find_one({'_id': bot_id}):  #retrun config dict (all env vars)
         environ['UPSTREAM_REPO'] = config_dict['UPSTREAM_REPO']
